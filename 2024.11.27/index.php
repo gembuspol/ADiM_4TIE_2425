@@ -27,7 +27,12 @@
         <?php
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $wybor=$_POST['wybor'];
-            echo $wybor;
+            $polaczenie1=mysqli_connect("localhost","root","","dane");
+            $zapytanie="SELECT imie, nazwisko FROM rezyserzy INNER JOIN filmy ON filmy.rezyserzy_id=rezyserzy.id WHERE tytul='".$wybor."'; ";
+            $wynik2=mysqli_query($polaczenie1,$zapytanie);
+            while($wiersz=mysqli_fetch_array($wynik2)){
+                echo $wiersz['imie']." ".$wiersz['nazwisko'];
+            }
         }
         ?>
     </section>
