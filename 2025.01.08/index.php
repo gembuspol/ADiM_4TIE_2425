@@ -29,11 +29,29 @@
                 while($wiersz=mysqli_fetch_array($wynik)){
                     echo "<tr>";
                     echo "<td>$wiersz[0]</td><td>$wiersz[1]</td><td>$wiersz[2]</td><td>$wiersz[3]</td><td>$wiersz[4]</td><td>$wiersz[5]</td>";
-                    echo "<tr>";
+                    echo "</tr>";
                 }
                 
                 echo "</table>";
+
+                // wypisanie tabeli razem z imieniem i nazwiskiem oraz nazwą sprzętu
+                echo "<table>";
+                echo "<tr><th>idzgloszenia</th><th>numerZgloszenia</th><th>imie klienta</th><th>nazwisko klienta</th><th>nazwa Sprzęt</th><th>opisUsterki</th><th>opisRozwiazania</th></tr>";
+                
+                $zapytanie2="SELECT idzgloszeniaSerwis, numerzgloszenia, imie, nazwisko, nazwa,  opisusterki,opisRozwiazania FROM zgloszeniaserwis, sprzet, klient WHERE zgloszeniaserwis.idklienta=klient.idklient AND zgloszeniaserwis.idsprzet=sprzet.idsprzet";
+                $wynik=mysqli_query($polaczenia,$zapytanie2);
+                
+                while($wiersz=mysqli_fetch_array($wynik)){
+                    echo "<tr>";
+                    echo "<td>$wiersz[0]</td><td>$wiersz[1]</td><td>$wiersz[2]</td><td>$wiersz[3]</td><td>$wiersz[4]</td><td>$wiersz[5]</td><td>$wiersz[6]</td>";
+                    echo "</tr>";
+                }
+                
+                echo "</table>";
+
+
                 mysqli_close($polaczenia);
+
             }else{
                 echo mysqli_connect_errno();
             }
@@ -41,6 +59,21 @@
             
         ?>
     </main>
+    <section>
+        <form method="POST" action="osoby.php">
+            <fieldset>
+                <legend>Wybieranie osoby</legend>
+                <select>
+                    <?php
+                        $polaczenie=mysqli_connect("localhost","root","",'serwis_4tie_24_25');
+                        $zapytanie3="SELECT imie, nazwisko,idklient FROM klient";
+
+                        mysqli_close($polaczenie);
+                    ?>
+                </select>
+            </fieldset>
+        </form>
+    </section>
     <footer>
         <p>Stronę przygotował XYZ</p>
     </footer>
