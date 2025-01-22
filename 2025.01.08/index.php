@@ -67,10 +67,15 @@
                     <?php
                         $polaczenie=mysqli_connect("localhost","root","",'serwis_4tie_24_25');
                         $zapytanie3="SELECT imie, nazwisko,idklient FROM klient";
-
+                        $wynik=mysqli_query($polaczenie,$zapytanie3);
+                        while($wiersz=mysqli_fetch_array($wynik)){
+                            echo '<option value='.$wiersz["idklient"].'>'.$wiersz["imie"].' '.$wiersz["nazwisko"].'</option>';
+                        }
                         mysqli_close($polaczenie);
                     ?>
                 </select>
+                <button type="submit">Zobacz wyniki</button>
+                <button type="reset">Reset</button>
             </fieldset>
         </form>
     </section>
