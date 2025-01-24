@@ -63,7 +63,7 @@
         <form method="POST" action="osoby.php">
             <fieldset>
                 <legend>Wybieranie osoby</legend>
-                <select>
+                <select name="wybor">
                     <?php
                         $polaczenie=mysqli_connect("localhost","root","",'serwis_4tie_24_25');
                         $zapytanie3="SELECT imie, nazwisko,idklient FROM klient";
