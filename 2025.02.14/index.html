@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Wprowadzenie</title>
+</head>
+<body>
+    <header>
+        <h1>Skrypty w JavaScript</h1>
+    </header>
+    <main>
+        <p id="zadanie1">Tutaj pojawią się wyniki</p>
+        <output id="zadanie2">Tutaj pojawią się wyniki</output>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <button onmousemove="funkcja2()">Funkcja 2</button>
+        <button onmouseover="funkcja3()">Funkcja 3</button>
+        <br>
+        <input type="number" id="liczba1">
+        <br>
+        <input type="number" id="liczba2">
+        <br>
+        <button onclick="funkcja4()">Funkcja 4</button>
+    </main>
+    <script>
+        function funkcja4(){
+            let liczba1=parseInt(document.getElementById("liczba1").value);
+            let liczba2=parseInt(document.getElementById("liczba2").value);
+            let wynik=liczba1+liczba2;
+            document.getElementById("zadanie2").innerHTML= wynik;
+        }
+        function funkcja3(){
+            console.log("Nie mam pojęcia gdzie się to pojawi");
+        }
+        function funkcja1(){
+            document.getElementById("zadanie1").innerHTML="Wprowadzamy dane przez javaScript";
+        }
+        function funkcja2(){
+            document.write("Kacper P gra nieustannie w ROBLOX");
+        }
+    </script>
+</body>
+</html>
