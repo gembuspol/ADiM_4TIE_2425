@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skrypt JavaScript</title>
+    <script src="lukasz.js"></script>
+</head>
+<body>
+    <header>Skrypt javaScript</header>
+    <main>
+        <p id="dane">Tutaj bedą wprowadzane dane przez skrypt JavaScript</p>
+        <p id="dane2">Tutaj kolejne dane</p>
+    </main>
+    <footer>
+        <button onclick="skrypt1()">Działanie skryptu 1</button>
+        <button onclick="skrypt2()">Działanie skryptu 2</button>
+    </footer>
+    <script>
+        function skrypt1(){
+            document.getElementById("dane").innerHTML="Jakikolwiek! Tu coś jeszcze";
+            document.write("Kamil się skupia, Kuba spogląda");
+        }
+    </script>
+</body>
+</html>

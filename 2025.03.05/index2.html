@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>Strona z formularzem i javaScript</header>
+    <main>
+        <output id="wynik1">Wynik 1</output> <br>
+        <output id="wynik2">Wynik 2</output><br>
+        <output id="wynik3">Wynik 3</output><br>
+        <output id="wynik4">Wynik 4</output><br>
+    </main>
+    <aside>
+        <label for="liczba1">Podaj liczbę 1</label><input type="number" id="liczba1" name="liczba1">
+        <label for="liczba2">Podaj liczbę 2</label><input type="number" id="liczba2" name="liczba2">
+        <label for="liczba3">Podaj liczbę 3</label><input type="number" id="liczba3" name="liczba3">
+        <br>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <button onclick="funkcja2()">Funkcja 2</button>
+    </aside>
+    <script>
+        function funkcja1(){
+            let liczba1=document.getElementById("liczba1").value;
+            let liczba2=document.getElementById("liczba2").value;
+            document.getElementById("wynik1").innerHTML=parseInt(liczba1)+parseInt(liczba2);
+        }
+        // obliczanie delty
+        function funkcja2(){
+            let a=parseFloat(document.getElementById("liczba1").value);
+            let b=parseFloat(document.getElementById("liczba1").value);
+            let c=parseFloat(document.getElementById("liczba1").value);
+            let delta=b*b+4*a*c;
+            document.getElementById("wynik2").innerHTML="Delta wynosi "+delta;
+        }
+    </script>
+</body>
+</html>
