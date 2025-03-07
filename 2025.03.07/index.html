@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deklaracja zmiennych</title>
+</head>
+<body>
+    <header>
+        Deklaracja zmiennych w javaScript
+    </header>
+    <main>
+        <input type="number" id="liczba1"><br>
+        <input type="number" id="liczba2"><br>
+        <p id="wynik">Tutaj pojawi sie wynik</p>
+    </main>
+    <footer>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <button onclick="funkcja2()">Funkcja 2</button>
+    </footer>
+    <script>
+        function funkcja1(){
+            // deklaracja zmiennych za pomocą  słowa kluczowego var nie jest zalecana od 2015 roku. Teraz należy korzystać z słów kluczowy let oraz const (stała)
+            let liczba1=parseFloat(document.getElementById("liczba1").value);
+            let liczba2=parseFloat(document.getElementById("liczba2").value);
+
+            console.log("Wynik dodawania: "+(liczba1+liczba2));
+        }
+        //wylosowanie liczby z zakresu od 0 do 1
+        let los=Math.random();
+        function funkcja2(){
+            let liczba1=parseFloat(document.getElementById("liczba1").value);
+            let liczba2=parseFloat(document.getElementById("liczba2").value);
+            alert("Suma wylosowanej liczby oraz dwóch wpisanych liczb wynosi "+(los+liczba1+liczba2));
+        }
+    </script>
+</body>
+</html>
