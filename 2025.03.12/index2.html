@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typy zmiennych i obiekty</title>
+</head>
+<body>
+    <header>
+        <h1> typy zmiennych i obiekty</h1>
+    </header>
+    <main>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <br>
+        <button onclick="funkcja2()">Funkcja 2</button>
+        <br>
+        <output id="wynik">Tutaj pojawi się wynik</output>
+    </main>
+    <script>
+        const ALEKS="Piksa";
+        let liczba=1245;
+        let liczbaPrzecinek=1243.213;
+        let prawda= true;
+        let duzaLiczba=123n;
+        let x;
+        function funkcja1(){
+            document.getElementById("wynik").innerHTML=ALEKS+typeof ALEKS + "<br>"+liczba+typeof liczba +"<br>"+liczbaPrzecinek+typeof liczbaPrzecinek +"<br>"+prawda+typeof prawda +"<br>"+duzaLiczba+typeof duzaLiczba +"<br>"+x+typeof x +"<br>";
+        }
+    </script>
+</body>
+</html>

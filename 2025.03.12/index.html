@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deklaracja zmiennych</title>
+</head>
+<body>
+    <header>
+        <h2>Deklaracja zmiennych i ich wypisywanie</h2>
+    </header>
+    <main>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <br>
+        <button onmousedown="funkcja2()">Funkcja 2</button>
+        <br>
+        <button onmouseleave="funkcja3()">Funkcja 3</button>
+        <br>
+        <input type="number" id="liczba1"><br>
+        <input type="number" id="liczba2"><br>
+        <output id="wynik">Tutaj pojawi się wynik</output>
+    </main>
+    <script>
+        let kuba="Pszczołkowski";
+        const PI=3.141592;
+        function funkcja1(){
+            document.getElementById("wynik").innerHTML="Zmienna "+kuba+" , stała "+PI;
+        }
+        function funkcja2(){
+            kuba="Mizera z Merivą";
+            console.log(kuba);
+        }
+        function funkcja3(){
+            PI=1500;
+            console.log(PI);
+        }
+    </script>
+</body>
+</html>
