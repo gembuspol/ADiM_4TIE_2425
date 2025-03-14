@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcje i obiekty</title>
+</head>
+<body>
+    <header>
+        <h1>Funkcje i obiekty</h1>
+    </header>
+    <main>
+        <label>Podaj jakiś tekst</label><input type="text" id="text"><br>
+        <label>Podaj jakąś liczbę</label><input type="number" id="liczba"><br>
+        <label>Podaj bok a</label><input type="number" id="a"><br>
+        <label>Podaj bok b</label><input type="number" id="b"><br>
+        <button onclick="funkcja1()">Funkcja1</button><br>
+        <button onclick="funkcja2()">Funkcja2</button><br>
+        <button onclick="funkcja3()">Funkcja3</button><br>
+
+    </main>
+    <script>
+        function obwod(zm1,zm2){
+            let obw=2*zm1+2*zm2;
+            alert("Obwód wynosi: "+obw);
+        }
+        function pole(zm1, zm2){
+            let pl=zm1*zm2;
+            alert("Pole wynosi: "+pl);
+        }
+        function funkcja2(){
+            let a=parseInt(document.getElementById("a").value);
+            let b=parseInt(document.getElementById("b").value);
+            obwod(a,b);
+            pole(a,b);
+        }
+        function polacz(p1,p2){
+            alert(p1+p2);
+        }
+        function funkcja1(){
+            let liczba=parseInt(document.getElementById("liczba").value);
+            let tekst=document.getElementById("text").value;
+            polacz(liczba,tekst);
+        }
+        // deklaracja obietków i klas 
+        const osoba = {
+            imie: "Kamil",
+            nazwisko: "Strzelecki",
+            wiek: 19
+        }
+        function funkcja3() {
+            alert(typeof(osoba));
+        }
+    </script>
+</body>
+</html>
