@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obiekt</title>
+</head>
+<body>
+    <p id="wynik1">Wynik 1</p>
+    <p id="wynik2">Wynik 2</p>
+    <p id="wynik3">Wynik 3</p>
+    <br>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <script>
+        const samochod={
+            marka: "Ford",
+            model: "Focus",
+            kolor: "różowy",
+            wypiszMarkaModel: function(){
+                return this.marka+ " "+ this.model;
+            }
+        };
+        function funkcja1(){
+            document.getElementById("wynik1").innerHTML=samochod.wypiszMarkaModel();
+        }
+        function funkcja2(){
+            //zmiana wartości w obiekcie
+            samochod.marka="BMW";
+            samochod.model="M4";
+            //wypisanie na ekran obiektu
+            document.getElementById("wynik2").innerHTML=samochod.wypiszMarkaModel();
+        }
+        function funkcja3(){
+
+            //wypisanie obiektu a nie konkrentenj metody lub wartości
+            document.getElementById("wynik3").innerHTML=samochod;
+        }
+    </script>
+</body>
+</html>

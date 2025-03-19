@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konstruktory</title>
+</head>
+<body>
+    <p id="wynik1">Wynik 1</p>
+    <p id="wynik2">Wynik 2</p>
+    <p id="wynik3">Wynik 3</p>
+    <br>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <script>
+        function Osoba(imie,nazwisko,wiek,rozmiarbuta,zadluzenie){
+            this.imie=imie;
+            this.nazwisko=nazwisko;
+            this.wiek=wiek;
+            this.rozmiarbuta=rozmiarbuta;
+            this.zadluzenie=zadluzenie;
+        }
+        const kamil=new Osoba("Kamil","Strzelecki",20,60,5000);
+        const aleks=new Osoba("Aleks","Strzelecki",6,31,2);
+        const wiktor=new Osoba("Wiktor", "Pędziwiatr",13,38,68320.74);
+        function wypiszObiekt(Osoba){
+            let tekst="Mam na imię "+Osoba.imie+", moje nazwisko to "+Osoba.nazwisko+ " wiek "+Osoba.wiek+ " rozmiar buta "+Osoba.rozmiarbuta+ " zadluzenie "+Osoba.zadluzenie;
+             return tekst;
+        }
+        function funkcja1(){
+            document.getElementById("wynik1").innerHTML=wypiszObiekt(kamil);
+        }
+        function funkcja2(){
+            document.getElementById("wynik2").innerHTML=wypiszObiekt(aleks);
+        }
+        function funkcja3(){
+            document.getElementById("wynik3").innerHTML=wypiszObiekt(wiktor);
+        }
+    </script>
+</body>
+</html>
