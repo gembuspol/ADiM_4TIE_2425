@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="wynik1">Wynik1</p>
+    <p id="wynik2">Wynik2</p>
+    <p id="wynik3">Wynik3</p>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <button onclick="funkcja4()">Funkcja 4</button>
+    <button onclick="funkcja5()">Funkcja 5</button>
+    <button onclick="funkcja6()">Funkcja 6</button>
+    <script>
+        let tekst1="Mało osób jest na lekcji";
+        let tekst2='Dawid powiedział: \'Dzień wagarowicza\'';
+        function funkcja1(){
+            document.getElementById("wynik1").innerHTML=tekst1;
+            document.getElementById("wynik2").innerHTML=tekst2;
+            document.getElementById("wynik3").innerHTML=tekst1+". "+tekst2;
+        }
+        //wypisywanie czesci tekstu - funkcja slice
+        function funkcja2(){
+            document.getElementById("wynik1").innerHTML=tekst1.slice(3,10)
+            document.getElementById("wynik2").innerHTML=tekst2.slice(10);
+            document.getElementById("wynik3").innerHTML=tekst1.slice(-10);
+        }
+        //wypisywanie pojedynczego znaku - funkcje at
+        function funkcja3(){
+            document.getElementById("wynik1").innerHTML=tekst1.at(6);
+            document.getElementById("wynik2").innerHTML=tekst2.at(10);
+            document.getElementById("wynik3").innerHTML=tekst1.at(-1);
+        }
+        //długość ciągu znaków - funkcja length
+        function funkcja4(){
+            document.getElementById("wynik1").innerHTML=tekst1.length;
+            document.getElementById("wynik2").innerHTML=tekst2.length;
+            document.getElementById("wynik3").innerHTML=(tekst1+tekst2).length;
+        }
+        //podział tekstu według podanego symbolu - funckja split()
+        function funkcja5(){
+            let tablica1=tekst1.split(" ");
+            let tablica2=tekst2.split("a");
+            document.getElementById("wynik1").innerHTML=tablica1[2];
+            document.getElementById("wynik2").innerHTML=tablica2[2];
+            document.getElementById("wynik3").innerHTML=tablica1[3];
+        }
+        //usunięcie z tekstu białych znaków czyli spacji, tabulatorów itp - funkcja trim()
+        function funkcja6(){
+            let tekst3="     Zadanie     Aplikacje    Piątek    ";
+            let biale=tekst3.trim();
+            document.getElementById("wynik1").innerHTML=tekst3;
+            document.getElementById("wynik2").innerHTML=tekst3.length;
+            document.getElementById("wynik3").innerHTML=biale.length;
+        }
+    </script>
+</body>
+</html>
