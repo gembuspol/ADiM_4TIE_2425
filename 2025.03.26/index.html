@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablice</title>
+</head>
+<body>
+    <button onclick="funkcja1()">Funkcja1</button>
+    <button onclick="funkcja2()">Funkcja2</button>
+    <button onclick="funkcja3()">Funkcja3</button>
+    <button onclick="funkcja4()">Funkcja4</button>
+    <button onclick="funkcja5()">Funkcja5</button>
+    <button onclick="funkcja6()">Funkcja6</button>
+    <button onclick="funkcja7()">Funkcja7</button>
+    <output id="wynik">Tutaj pojawi się wynik funkcji</output>
+    <script>
+        const imie=["Janusz","Dariusz","Mariusz","Zeusz"];
+        function funkcja1(){
+            document.getElementById("wynik").innerHTML=imie;
+        } 
+        function funkcja2(){
+            imie[3]="Janek";
+            document.getElementById("wynik").innerHTML=imie;
+        }
+        function funkcja3() {
+            //określenie długości (ilości elememntów) tablicy za pomocą metody length
+            let rozmiar=imie.length;
+            document.getElementById("wynik").innerHTML="Wielkość tablicy wynosi "+rozmiar+"<br>"+imie.toString();
+        }
+        function funkcja4(){
+            //dodanie elementu na początek tablicy
+            imie.unshift("Tomasz");
+            //dodanie elementu na koniec tablicy
+            imie.push("Bartosz");
+            document.getElementById("wynik").innerHTML=imie;
+        }
+        function funkcja5(){
+            //usunięcie pierwszego elementu tablicy
+            imie.shift();
+            //usunięcie ostatniego elementu tablicy
+            imie.pop();
+            document.getElementById("wynik").innerHTML=imie;
+        }
+        function funkcja6(){
+            //dodanie elementów wewnątrz tablicy - użyjemy metody splice(), jako pierwszy parametr podaje indeks gdzie ma być dodany elementy, jako drugi parametr określamy ile elementów ma byc usuniętych, później podajemy wartości nowych elementów
+            imie.splice(2,0,"Wacław");
+            //usuniecie wybranego elemnetu z tablicy slice()
+            imie.slice(4);
+            document.getElementById("wynik").innerHTML=imie;
+        }
+        function funkcja7(){
+            //posortowanie tablicy
+            imie.sort();
+            document.getElementById("wynik").innerHTML=imie;
+        }
+    </script>
+</body>
+</html>

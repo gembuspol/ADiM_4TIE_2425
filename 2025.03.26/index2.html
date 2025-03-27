@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zastosowanie daty </title>
+</head>
+<body>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <button onclick="funkcja4()">Funkcja 4</button>
+    <button onclick="funkcja5()">Funkcja 5</button>
+    <br>
+    <output id="wynik">Tutaj pojawi się wynik</output>
+    <script>
+        //zadeklarowanie aktualnej daty - w momencie załadowania strony
+        const data1=new Date();
+        //deklaracja samej daty
+        const data2=new Date("2021-09-01");
+        //deklaracja daty i godziny
+        const data3=new Date(2022,11,3,12,13,0,0);
+        function funkcja1(){
+            document.getElementById("wynik").innerHTML="Data 1: "+data1+"Data 2: "+data2+"Data 3: "+data3;
+        }
+        function funkcja2(){
+            let rok=data1.getFullYear();
+            let miesiac=data1.getMonth();
+            let dzien=data1.getDay();
+            let godzina=data1.getHours();
+            let minuty=data1.getMinutes();
+            document.getElementById("wynik").innerHTML="Data inaczej, minut: "+minuty+" godziny "+godzina+" dzień "+dzien+" miesiac "+miesiac+" rok "+rok;
+        }
+        function funkcja3(){
+            //wypisanie daty w inny sposób
+            document.getElementById("wynik").innerHTML=data2.toDateString() +"<br>"+data2.toISOString()+"<br>"+data2.toUTCString();
+        }
+        function funkcja4(){
+            //zmiana daty
+            let data3tmp=data3;
+            data3tmp.setFullYear(2026,11,31);
+            document.getElementById("wynik").innerHTML=data3+"<br>"+data3tmp;
+        }
+        function funkcja5(){
+            //poznanie ilości milisekund od 1 stycznia 1970 roku używamy metody now()
+            let milisekundy=Date.now();
+            //dodajemy do daty np 40 dni od dzisiaj
+            const dataDzis=new Date();
+            dataDzis.setDate(dataDzis.getDate()+40);
+            document.getElementById("wynik").innerHTML="Ilość mili sekund "+milisekundy+"<br>Data za 40 dni "+dataDzis;
+        }
+    </script>
+</body>
+</html>
