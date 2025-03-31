@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka Math</title>
+</head>
+<body>
+    <button onkeypress="funkcja1()">Funkcja1</button>
+    <button onclick="funkcja2()">funkcja 2</button>
+    <button onclick="funkcja3()">funkcja 3</button>
+    <button onclick="funkcja4()">funkcja 4</button>
+    <button onclick="funkcja5()">funkcja 5</button>
+    <button onclick="funkcja6()">funkcja 6</button>
+    <p id="wynik">Tutaj pojawi się wynik</p>
+    <script>
+        function funkcja1(){
+            alert(Math.PI);
+        }
+        let liczba=123.3123;
+        function funkcja2(){
+            let zaokraglenie=Math.round(liczba);
+            document.getElementById("wynik").innerHTML=zaokraglenie;
+        }
+        function funkcja3(){
+            let trzyMiejsca=Math.round(liczba*1000)/1000;
+            document.getElementById("wynik").innerHTML=trzyMiejsca;
+        }
+        function funkcja4(){
+            let zaokraglenieWdol=Math.floor(liczba);
+            let zaokraglenieWgora=Math.ceil(liczba);
+            document.getElementById("wynik").innerHTML="Zaokrąglenie w dół: "+zaokraglenieWdol+" zaokrąglenie w górę "+zaokraglenieWgora;
+        }
+        function funkcja5(){
+            let sinus=Math.sin(2*Math.PI);
+            let max=Math.max(liczba,12,423,6,123,1123);
+            document.getElementById("wynik").innerHTML="Sinus 2 PI "+sinus+" wartosc maksymalna "+max;
+        }
+        function funkcja6(){
+            let potega=Math.pow(4,4);
+            let pierwiastek=Math.sqrt(121);
+            document.getElementById("wynik").innerHTML="Potegowanie - 4 do potegi 4"+potega+" pierwiastek kwadratowy z 121 "+pierwiastek;
+        }
+    </script>
+</body>
+</html>
