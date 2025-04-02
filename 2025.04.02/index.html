@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liczby pseudolosowa</title>
+</head>
+<body>
+    <button onclick="funkcja1()">Funkcja 1</button><br>
+    <button onclick="funkcja2()">Funkcja 2</button><br>
+    <button onclick="funkcja3()">Funkcja 3</button><br>
+    <button onclick="funkcja4()">Funkcja 4</button><br>
+    <button onclick="funkcja5()">Funkcja 5</button><br>
+    <p id="wynik">Tutja pojawi się wynik</p>
+    <label for="liczba1">Podaj pierwszą liczbę</label><input type="number" id="liczba1"><br>
+    <label for="liczba2">Podaj drugą liczbę</label><input type="number" id="liczba2"><br>
+    <script>
+        function funkcja1(){
+            let liczba=Math.random();
+            document.getElementById("wynik").innerHTML=liczba;
+        }
+        //losowanie liczby całkowitej z przedziału od 0 do 100
+        function funkcja2(){
+            let liczba=Math.floor(Math.random()*101);
+            document.getElementById("wynik").innerHTML=liczba;
+        }
+        //losowanie liczby rzeczywistej z przedziału od 0 do 100
+        function funkcja3(){
+            let liczba=Math.random()*101;
+            document.getElementById("wynik").innerHTML=liczba;
+        }
+        //losowanie liczby zmiennoprzecinkowej z przedziału od -8 do 8
+        //funkcja random losuje od 0 do 1 bez jedynki, dlatego musimy podać wiekszą wartość o 1
+        function funkcja4(){
+            let liczba=Math.random()*18-8;
+            document.getElementById("wynik").innerHTML=liczba;
+        }
+        //losowanie liczb z przedziału podanego przez użytkownika
+        function funkcja5(){
+            let liczba1=parseInt(document.getElementById("liczba1").value);
+            let liczba2=parseInt(document.getElementById("liczba2").value);
+            let los=Math.floor(Math.random()*(liczba2-liczba1+1)+liczba1);
+            document.getElementById("wynik").innerHTML=los;
+        }
+    </script>
+</body>
+</html>
