@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla switch</title>
+</head>
+<body>
+    <header>
+        <p id="wypisz">Tutaj pojawi się wynik</p>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <button onclick="funkcja2()">Funkcja 2</button>
+        <button onclick="funkcja3()">Funkcja 3</button>
+        <button onclick="funkcja4()">Funkcja 4</button>
+    </header>
+    <main>
+        <script>
+            function funkcja1(){
+                let los=Math.ceil(Math.random()*7);
+               // document.getElementById("wypisz").innerHTML=los;
+                switch(los){
+                    case 1:
+                        document.getElementById("wypisz").innerHTML="Poniedziałek";
+                        break;
+                    case 2:
+                        document.getElementById("wypisz").innerHTML="Wtorek";
+                        break;
+                    case 3:
+                        document.getElementById("wypisz").innerHTML="Środa";
+                        break;
+                    case 4:
+                        document.getElementById("wypisz").innerHTML="Czwartek";
+                        break;
+                    case 5:
+                        document.getElementById("wypisz").innerHTML="Piątek";
+                        break;
+                    case 6:
+                        document.getElementById("wypisz").innerHTML="Sobota";
+                        break;
+                    case 7:
+                        document.getElementById("wypisz").innerHTML="Niedziela";
+                        break;
+                    default:
+                        document.getElementById("wypisz").innerHTML="Błędna liczba";
+                }
+            }
+            //funkcja sprawdzająca czy liczba jest podzielna przez 5 i 25
+            function funkcjaSprawdz(liczba){
+                //ustalenie zmiennej, która będzie przechowywała informacje o podzielności liczby. Gdzy będzie wynosiła 0  oznacza to że nie jest podzielna przez 5 i nie jest podzielna przez 25, jeżeli będzie wynosiła 1 to liczba jest podzielna przez 5, jeżeli będzie wynosiłą 2 to jest podzielna przez 25, jeżeli będzie wynosiła 3 to oznacza że jest podzielan przez 5 i 25 (dodajemu 1 + 2)
+                let podzielnosc=0;
+                //sprawdzanie czy liczba jest podzielna przez 5
+                if(liczba%5==0){
+                    podzielnosc+=1;
+                }
+                if(liczba%25==0){
+                    podzielnosc+=2;
+                }
+                switch(podzielnosc){
+                    case 0: 
+                        document.getElementById("wypisz").innerHTML="Liczba nie jest podzielna przez 5 i przez 25";
+                        break;
+                    case 1: 
+                        document.getElementById("wypisz").innerHTML="Liczba jest podzielna przez 5";
+                        break;
+                    case 2: 
+                        document.getElementById("wypisz").innerHTML="Liczba jest podzielna przez 25";
+                        break;
+                    case 3: 
+                        document.getElementById("wypisz").innerHTML="Liczba jest podzielna przez 5 i przez 25";
+                        break;
+                }
+            }
+            function funkcja2() {
+                let los=Math.ceil(Math.random()*49);
+                funkcjaSprawdz(los); 
+                alert(los);
+            }
+        </script>
+    </main>
+</body>
+</html>

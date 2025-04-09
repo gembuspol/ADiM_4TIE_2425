@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla for</title>
+</head>
+<body>
+    <header>
+        <p id="wynik">Tutja pojawi sie wynik</p>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <button onclick="funkcja2()">Funkcja 2</button>
+        <button onclick="funkcja3()">Funkcja 3</button>
+    </header>
+    <main>
+        <script>
+            //funkcja wskazująca dzielniki całkowita liczby
+            function dzielniki(liczba){
+                //zmienna zawierająca dzielniki liczby
+                const dzielnik=[];
+                //pętla for przechodząca przez wszystkie liczby od 1 do podaje jako parametr wywołanai liczby
+                for(let i=1;i<=liczba;i++){
+                    //sprawdzamy czy nasza liczba jest podzielna przez kolejną liczbę z pętli
+                    if(liczba%i==0){
+                        dzielnik.push(i);
+                    }
+                }
+                for(let i=0;i<dzielnik.length;i++){
+                    document.getElementById("wynik").innerHTML+=dzielnik[i]+"<br>";
+                }
+            }
+            function funkcja1(){
+                document.getElementById("wynik").innerHTML="";
+                let los=Math.floor(Math.random()*101+100);
+                dzielniki(los);
+            }
+        </script>
+    </main>
+</body>
+</html>
