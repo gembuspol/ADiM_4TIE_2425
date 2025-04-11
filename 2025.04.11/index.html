@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla while</title>
+</head>
+<body>
+    <header>
+        <p id="wynik">Tutaj pojawi się wynik</p>
+        <button onclick="funkcja1()">Funkcja 1</button>
+        <button onclick="funkcja2()">Funkcja 2</button>
+        <button onclick="funkcja3()">Funkcja 3</button>
+    </header>
+    <script>
+        function funkcja1(){
+            let tablica=["Dawid","Tobiasz","Wiktor","Konrad"];
+            let i=0;
+            let wynik="";
+            while(i<tablica.length){
+                wynik+=tablica[i]+"<br>";
+                i++;
+            }
+            document.getElementById("wynik").innerHTML=wynik;
+        }
+        // pętla while jako obliczanie dzielników liczby
+        function funkcja2(){
+            let los=Math.floor(Math.random()*51+50);
+            let x=1;
+            document.getElementById("wynik").innerHTML="Dzielniki liczby "+los+":";
+            while(x<los){
+                let reszta=los%x;
+                if(reszta==0){
+                    document.getElementById("wynik").innerHTML+=x+", ";
+                }
+                x++;
+            }
+
+        }
+    </script>
+</body>
+</html>
