@@ -20,29 +20,29 @@
         <header>
             <img src="animacja.gif" alt="Usługi informatyczne">
         </header>
-        <main>
+        <main id="main">
             <h2>Kontakt</h2>
             <table>
                 <tr>
                     <td>Imię</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" id="imie"></td>
                 </tr>
                 <tr>
                     <td>Nazwisko</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" id="nazwisko"></td>
                 </tr>
                 <tr>
                     <td>E-mail</td>
-                    <td><input type="email"></td>
+                    <td><input type="email" id="email"></td>
                 </tr>
                 <tr>
                     <td>Zgłoszenie</td>
-                    <td><textarea rows="10" cols="40"></textarea></td>
+                    <td><textarea rows="10" cols="40" id="zgloszenie"></textarea></td>
 
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="checkbox">Zapoznałem się z regulaminem</td>
+                    <td><input type="checkbox" id="wybor">Zapoznałem się z regulaminem</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -58,6 +58,21 @@
             Autor strony: <strong>11111111</strong>
         </footer>
     </section>
-    
+    <script>
+        function przycisk(){
+            let imie=document.getElementById("imie").value;
+            let nazwisko=document.getElementById("nazwisko").value;
+            let email=document.getElementById("email").value;
+            let zgloszenie=document.getElementById("zgloszenie").value;
+            let wybor=document.getElementById("wybor").checked;
+            
+            
+            const main=document.getElementById("main");
+            const paragraf=document.createElement("p");
+            paragraf.innerText="wartosc";
+            //dodanie elementu na stronie
+            main.appendChild(paragraf);
+        }
+    </script>
 </body>
 </html>
