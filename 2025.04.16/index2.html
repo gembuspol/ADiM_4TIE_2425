@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pętla for of</title>
+</head>
+<body>
+    <p id="wypisz">Tutja pojawi się wynik</p>
+    <label>Poczatek pętli</label><input type="number" id="liczba1"><br>
+    <label>Koniec pętli</label><input type="number" id="liczba2"><br>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <script>
+        let tekst=[12,4123,5,1,"test"];
+        //wypisanie tablicy za pomocą pętli for of:
+        function funkcja1(){
+            let wynik="";
+            for(let x of tekst){
+                wynik+=x;
+            }
+            document.getElementById("wypisz").innerHTML=wynik;
+        }
+        //wypisanie kolejnych znaków z tekstu
+        let napis="Jakiś tekst";
+        function funkcja2(){
+            for(let x of napis){
+            document.getElementById("wypisz").innerHTML+=x+"<br>";
+            }
+        }
+        function funkcja3(){
+            let liczba1=parseInt(document.getElementById("liczba1").value);
+            let liczba2=parseInt(document.getElementById("liczba2").value);
+            //wypisanie liczb z przedziału za pomoca pętli do while
+            let x=liczba1;
+            do{
+                document.getElementById("wypisz").innerHTML+=x+"<br>";
+                x++;
+            }
+            while(x<=liczba2);
+        }
+        
+    </script>
+</body>
+</html>

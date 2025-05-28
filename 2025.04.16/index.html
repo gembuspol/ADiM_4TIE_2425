@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="wynik">Tutaj pojawi się wynik</p>
+    <button onclick="funkcja1()">Funkcja 1</button>
+    <button onclick="funkcja2()">Funkcja 2</button>
+    <button onclick="funkcja3()">Funkcja 3</button>
+    <script>
+       //deklaracja obiektu
+       const osoba={
+        imie:"Kamil",
+        nazwisko:"Strzelecki",
+        rozmiarButa:43
+       };
+       function funkcja1(){
+        let text="";
+        //wykorzystanie funkcji for in aby wypisać elementy obiektu
+        for(let x in osoba){
+            text+=osoba[x];
+        }
+        document.getElementById("wynik").innerHTML=text;
+       }
+       //deklaracja tablicy
+       const tablica=[43,564,312,54,"tekst","KamilStrzelecki43"];
+       function funkcja2(){
+        let text="";
+        //wypisanie zawartosci za pomocą pętli for in
+        for(let x in tablica){
+            text+=tablica[x];
+        }
+        document.getElementById("wynik").innerHTML=text;
+       }
+       //zmienna globalna - dostepna w całym dokumencie
+       let globalna="";
+       //wypisanie zawartości tablicy za pomocą metody foreach
+       
+       function wypisanie(tekst){
+        globalna+=tekst+",";
+       }
+       function funkcja3(){
+        const tablica=[43,564,312,54,"tekst","KamilStrzelecki43"];
+        tablica.forEach(wypisanie);
+        document.getElementById("wynik").innerHTML=globalna;
+       }
+    </script>
+</body>
+</html>
