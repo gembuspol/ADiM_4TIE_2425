@@ -66,12 +66,18 @@
             let zgloszenie=document.getElementById("zgloszenie").value;
             let wybor=document.getElementById("wybor").checked;
             
-            
             const main=document.getElementById("main");
             const paragraf=document.createElement("p");
-            paragraf.innerText="wartosc";
-            //dodanie elementu na stronie
-            main.appendChild(paragraf);
+            if(wybor==false){
+                paragraf.innerText="Musisz zapoznać się z regulaminem";
+                //dodanie elementu na stronie
+                main.appendChild(paragraf);
+            }else{
+                paragraf.innerHTML=imie+" "+nazwisko+ "<br> Treść Twojej sprawy:"+zgloszenie;
+                main.appendChild(paragraf);
+            }
+            
+            
         }
     </script>
 </body>
