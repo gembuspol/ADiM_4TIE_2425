@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Montaż polskich znaków</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <img src="montaz_paneli.png" alt="firma usługowa">
+        </header>
+
+        <nav>
+            <a href="index.html">Strona Główna</a>
+            <a href="oferta.html">Oferta</a>
+            <a href="koszty.html">Kalkulator kosztów</a>
+        </nav>  
+
+        <main>
+            <h1>Kalkulator kosztów montażu</h1>
+            <label for="szerokosc">Szerokość pomieszczenia [m]: </label> <input type="number" name="szerokosc" id="szerokosc">
+            <label for="dlugosc">Długość pomieszczenia [m]: </label> <input type="number" name="dlugosc" id="dlugosc">
+            <p>Typ panelu</p>
+            <input type="radio" name="typ_panelu" id="laminowane" value="laminowane"> <label for="laminowane">Panele laminowane</label><br>
+            <input type="radio" name="typ_panelu" id="winylowe" value="winylowe"> <label for="winylowe">Panele winylowe</label><br>
+            <input type="radio" name="typ_panelu" id="deska" value="deska"> <label for="deska">Deska podłogowa</label><br>
+            <button onclick="Oblicz()">Oblicz</button>
+            <p id="wynik"></p>
+        </main>
+
+        <footer>
+            <h5>Autor strony:XD</h5>
+        </footer>
+    </body>
+</html>
